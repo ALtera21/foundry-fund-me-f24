@@ -28,16 +28,16 @@ contract InteractionsTest is Test {
     }
 
     function testUserCanFundInteractions() public funded{
-        FundFundMe fundFundMe = new FundFundMe();
-        fundFundMe.fundFundMe(address(fundMe));
+        // FundFundMe fundFundMe = new FundFundMe();
+        // fundFundMe.fundFundMe(address(fundMe));
 
-        address funder = fundMe.getFunders(0);
-        assertEq(funder, USER);
+        // address funder = fundMe.getFunders(0);
+        // assertEq(funder, USER);
 
-        // WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
-        // withdrawFundMe.withdrawFundMe(address(fundMe));
+        WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
+        withdrawFundMe.withdrawFundMe(address(fundMe));
 
-        assert(address(fundMe).balance == 1 ether);
+        assert(address(fundMe).balance == 0 ether);
         console.log(address(fundMe).balance);
     }
 }
